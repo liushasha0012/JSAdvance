@@ -1,0 +1,21 @@
+{
+  "name": "JSAdvance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liushasha0012/JSAdvance.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liushasha0012/JSAdvance/issues"
+  },
+  "homepage": "https://github.com/liushasha0012/JSAdvance#readme",
+  "devDependencies": {}
+}
