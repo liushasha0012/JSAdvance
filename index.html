@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #hour {
+            font-size: 100px;
+            margin:auto;
+            text-align: center;
+            color: skyblue;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="hour"></div>
+
+    <script>
+      var div = document.getElementById('hour');
+
+      setInterval(() => {
+        var now = new Date().getTime();
+        var target = 1625222100000;
+        var timeDifference = target - now;
+        if (timeDifference >= 0) {
+          var hour = Math.floor(timeDifference / 3600000);
+          var minutes = Math.floor((timeDifference - 3600000 * hour) / 60000);
+          var seconds = (
+            (timeDifference - 3600000 * hour - 60000 * minutes) /
+            1000
+          ).toFixed(0);
+          div.innerHTML = `下班倒计时： ${hour} : ${minutes}: ${seconds}`;
+          console.log(`${hour} : ${minutes}: ${seconds}`);
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
