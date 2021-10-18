@@ -25,3 +25,6 @@ child1.name.push(123);
 console.log(child1.name);
 child1.sayName();
 child2.sayName();
+
+function fn() {}
+console.log(Object.getPrototypeOf(fn));

@@ -25,3 +25,4 @@ console.log(one);
 for (var i of one) {
   console.log(i); // 1, 2, 3
 }
+
