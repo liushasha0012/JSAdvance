@@ -1,9 +1,11 @@
 const {a, foo} = require('./module1.js');
 const {c, b, bar} = require('./module2');
-// const module2 = require('./module2');
-
-console.log('运行模块1:', a);
+const moduleThree = require('./module3.js');
 foo();
-console.log('运行模块2:', c, b);
 bar();
+
+console.log(moduleThree.num);
+moduleThree.incNum();
+moduleThree.incNum();
+console.log('计算之后的值：', moduleThree.num);
 

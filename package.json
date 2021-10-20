@@ -17,5 +17,8 @@
     "url": "https://github.com/liushasha0012/JSAdvance/issues"
   },
   "homepage": "https://github.com/liushasha0012/JSAdvance#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "i": "^0.3.7",
+    "npm": "^8.1.0"
+  }
 }
