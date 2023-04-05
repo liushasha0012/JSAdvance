@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垂直居中布局</title>
+    <style>
+        .parent {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            background-color: burlywood;
+        }
+        .child {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            top: calc(50% - 100px); /* 运算符号左右两旁一定要有空格 */
+            left: calc(50% - 100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

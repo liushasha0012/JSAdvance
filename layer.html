@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图层</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        overflow: auto;
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>
+        更好的资源缓存策略，对于 CDN
+        来讲可减少回源次数，对于浏览器而言可减少请求发送次数。无论哪一点，对于二次网站访问都具有更好的访问体验。
+        缓存策略 强缓存: 打包后带有 hash 值的资源 (如 /build/a3b4c8a8.js)
+        协商缓存: 打包后不带有 hash 值的资源 (如 /index.html) 分包加载 (Bundle
+        Spliting) 避免一行代码修改导致整个 bundle 的缓存失效
+      </p>
+      <p>
+        对一个网站的资源进行压缩优化，从而达到减少 HTTP 负载的目的。
+        js/css/image 等常规资源体积优化，这是一个大话题，再以下分别讨论
+        小图片优化，将小图片内联为 Data URI，减小请求数量 图片懒加载 新的 API:
+        IntersectionObserver API 新的属性: loading=lazy
+      </p>
+      <p>
+        对 JS、CSS、HTML 等文本资源均有效，但是对图片效果不大。 gzip 通过 LZ77
+        算法与 Huffman 编码来压缩文件，重复度越高的文件可压缩的空间就越大。
+        brotli 通过变种的 LZ77 算法、Huffman
+        编码及二阶文本建模来压缩文件，更先进的压缩算法，比 gzip
+        有更高的性能及压缩率 可在浏览器的 Content-Encoding
+        响应头查看该网站是否开启了压缩算法，目前知乎、掘金等已全面开启了 brotli
+        压缩。
+      </p>
+    </div>
+    <script type="text/javascript">
+      function Bromise(executor) {
+        var onResolve_ = null
+        var onReject_ = null
+        // 模拟实现 resolve 和 then，暂不支持 rejcet
+        this.then = function (onResolve, onReject) {
+            onResolve_ = onResolve
+        };
+        function resolve(value) {
+              //setTimeout(()=>{
+                onResolve_(value)
+              // },0)
+        }
+        executor(resolve, null);
+    }
+    function executor(resolve, reject) {
+        resolve(100)
+    }
+    // 将 Promise 改成我们自己的 Bromsie
+    let demo = new Bromise(executor)
+    
+    function onResolve(value){
+        console.log(value)
+    }
+    demo.then(onResolve)
+    </script>
+  </body>
+</html>
